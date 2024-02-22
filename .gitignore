@@ -5,6 +5,4 @@
 node_modules/
 ressources/
 middlewares/
-package-lock.json
-package.json
 .env
