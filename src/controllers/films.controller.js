@@ -31,7 +31,7 @@ exports.trouveFilmType = (req, res) => {
         });
         return;
     }
-
+// type_tytre doit etre dans les params non les query
     Films.trouveFilmType(req.query.type_titre)
         .then((Films) => {
             // S'il n'y a aucun résultat, on retourne un message d'erreur avec le code 404
@@ -42,7 +42,7 @@ exports.trouveFilmType = (req, res) => {
                 });
                 return;
             }
-
+// ne prent pas en compte les tv show
             page_suivante = `/api/films/type_titre?page=${parseInt(req.query.page) + 1}`;
             if (parseInt(req.query.page) + 1 > Math.ceil(Films.length / 10))
             {
